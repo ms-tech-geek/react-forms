@@ -1,8 +1,6 @@
 import { useState } from 'react';
 
 export default function Login() {
-  // const [enteredEmail, setEnteredEmail] = useState('');
-  // const [enteredPassword, setEnteredPassword] = useState('');
   const [enteredValues, setEnteredValues] = useState({
     email: '',
     password: '',
@@ -40,14 +38,6 @@ export default function Login() {
       [identifier]: true,
     }));
   }
-
-   // function handleEmailChange(event) {
-  //   setEnteredEmail(event.target.value);
-  // }
-
-  // function handlePasswordChange(event) {
-  //   setEnteredPassword(event.target.value);
-  // }
 
   return (
     <form onSubmit={handleSubmit}>
