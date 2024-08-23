@@ -28,12 +28,16 @@ export default function Login() {
       ...prevValues,
       [identifier]: value,
     }));
+    setDidEdit((prevEdit) => ({
+      ...prevEdit,
+      [identifier]: false,
+    }));
   }
 
   function handleInputBlur(identifier) {
-    setDidEdit(prevEdit => ({
+    setDidEdit((prevEdit) => ({
       ...prevEdit,
-      [identifier]: true
+      [identifier]: true,
     }));
   }
 
@@ -56,7 +60,7 @@ export default function Login() {
             id="email"
             type="email"
             name="email"
-            onBlur={handleInputBlur('email')}
+            onBlur={()=>handleInputBlur('email')}
             onChange={(event) => handleInputChange('email', event.target.value)}
             value={enteredValues.email}
           />
@@ -69,7 +73,7 @@ export default function Login() {
             id="password"
             type="password"
             name="password"
-            onBlur={handleInputBlur('password')}
+            onBlur={()=>handleInputBlur('password')}
             onChange={(event) =>
               handleInputChange('password', event.target.value)
             }
