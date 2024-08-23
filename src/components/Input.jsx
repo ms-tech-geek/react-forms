@@ -10,5 +10,5 @@ const Input = ({ label, id, error, ...props }) => {
 		</div>
 	);
 };
-å
+
 export default Input;
